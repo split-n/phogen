@@ -1,3 +1,32 @@
 #title {
   text-align:center;
 }
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  width:56em;
+}
+
+#table-canvas-configures {
+  margin-left: auto;
+  margin-right: auto;
+  width:40em;
+
+}
+
+#table-line-configures {
+  margin-left: auto;
+  margin-right: auto;
+  width:50em;
+}
+
+#generate-btn-container {
+  text-align:right;
+  margin-right:3em;
+}
+
+#canvas-container {
+  margin-top: 4em;
+  text-align:center;
+}
