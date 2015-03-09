@@ -1,2 +1,2 @@
 # phogen
-pixel-based hoganshi generator
+pixel-based houganshi generator
