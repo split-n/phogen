@@ -18,6 +18,27 @@
     </div>
     <main>
       <div id="controller">
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>interval</th>
+            <th>lineDash</th>
+            <th>writeText</th>
+          </tr>
+          <tr class="row-line-configure">
+            <td><input type="text" class="val-interval" value="10"/></td>
+            <td><input type="text" class="val-lineDash" value="2"/></td>
+            <td>
+              <input type="checkbox" class="val-writeText"/>
+            </td>
+          </tr>
+          <tr class="row-line-configure">
+            <td><input type="text" class="val-interval" value="100"/></td>
+            <td><input type="text" class="val-lineDash" value="1"/></td>
+            <td>
+              <input type="checkbox" class="val-writeText" checked/>
+            </td>
+          </tr>
+        </table>
         <button id="generate-btn" class="btn btn-primary btn-large">Generate</button>
       </div>
       <div id="canvas-container">
