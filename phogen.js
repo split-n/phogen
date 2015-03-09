@@ -1,10 +1,9 @@
 
 // line: {interval:number, lineDash:number, writeText:bool}
 var Phogen = (function(){
-  var _lines;
 
   function Phogen(lines){
-    _lines = lines;
+    this._lines = lines;
   }
 
   function fillCanvas(canvas, ctx){
@@ -14,8 +13,11 @@ var Phogen = (function(){
     ctx.restore();
   }
 
-  function renderAll(canvas, ctx){
-    _lines.forEach(function(line){
+  function renderAll(canvas, ctx, lines){
+    lines.forEach(function(line){
+      if(line.interval < 1){
+        throw new Error("line interval must be => 1");
+      }
       writeElementH(canvas, ctx, line);
       writeElementV(canvas, ctx, line);
     });
@@ -77,7 +79,7 @@ var Phogen = (function(){
     ctx.translate(0.5, 0.5);
 
     fillCanvas(canvas, ctx);
-    renderAll(canvas, ctx);
+    renderAll(canvas, ctx,this._lines);
 
     return canvas;
   };
