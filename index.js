@@ -23,7 +23,9 @@
   }
 
   function parseCanvasConfiguration(){
-
+    var width = $("#val-canvas-width").prop("value");
+    var height = $("#val-canvas-height").prop("value");
+    return {width:parseInt(width),height:parseInt(height)};
   }
 
   function parseLineConfiguration(){
@@ -38,15 +40,18 @@
   }
 
   function generate(){
+    var canvasConf = parseCanvasConfiguration();
     var lineConf = parseLineConfiguration();
     var canvasContainer = $("#canvas-container");
     var pg = new Phogen(lineConf);
 
-    var renderedCanvas = pg.render(400,300);
+    var renderedCanvas = pg.render(canvasConf.width,canvasConf.height);
 
     canvasContainer.empty();
     canvasContainer.append(renderedCanvas);
   }
+
+
   insertSeedLineConfiguration();
   $("#generate-btn").click(function(){
     generate();
