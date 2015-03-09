@@ -5,20 +5,24 @@
 main {
   margin-left: auto;
   margin-right: auto;
-  width:56em;
+  width:52em;
+}
+
+th,td {
+  text-align:center;
 }
 
 #table-canvas-configures {
   margin-left: auto;
   margin-right: auto;
-  width:40em;
+  width:30em;
 
 }
 
 #table-line-configures {
   margin-left: auto;
   margin-right: auto;
-  width:50em;
+  width:46em;
 }
 
 #generate-btn-container {
