@@ -7,13 +7,12 @@
   function generate(){
     var canvasConf = parseCanvasConfiguration();
     var lineConf = parseLineConfiguration();
-    var canvasContainer = $("#canvas-container");
     var pg = new Phogen(lineConf);
 
     var renderedCanvas = pg.render(canvasConf.width, canvasConf.height);
 
-    canvasContainer.empty();
-    canvasContainer.append(renderedCanvas);
+    var pngDataUrl = renderedCanvas.toDataURL();
+    window.open(pngDataUrl);
   }
 
   function insertSeedLineConfiguration(){
