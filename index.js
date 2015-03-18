@@ -1,4 +1,21 @@
 (function(){
+  insertSeedLineConfiguration();
+  $("#generate-btn").click(function(){
+    generate();
+  });
+
+  function generate(){
+    var canvasConf = parseCanvasConfiguration();
+    var lineConf = parseLineConfiguration();
+    var canvasContainer = $("#canvas-container");
+    var pg = new Phogen(lineConf);
+
+    var renderedCanvas = pg.render(canvasConf.width, canvasConf.height);
+
+    canvasContainer.empty();
+    canvasContainer.append(renderedCanvas);
+  }
+
   function insertSeedLineConfiguration(){
     var seedLines = [{interval:10, lineDash:2, writeText:false},
                      {interval:100, lineDash:1, writeText:true}];
@@ -38,24 +55,4 @@
         writeText:writeText};
     }).toArray();
   }
-
-  function generate(){
-    var canvasConf = parseCanvasConfiguration();
-    var lineConf = parseLineConfiguration();
-    var canvasContainer = $("#canvas-container");
-    var pg = new Phogen(lineConf);
-
-    var renderedCanvas = pg.render(canvasConf.width, canvasConf.height);
-
-    canvasContainer.empty();
-    canvasContainer.append(renderedCanvas);
-  }
-
-
-  insertSeedLineConfiguration();
-  $("#generate-btn").click(function(){
-    generate();
-  });
-
-
 })();
