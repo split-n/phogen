@@ -49,6 +49,13 @@
         $("<td>").append($("<input>",
             {type:"checkbox", class:"val-writeText", checked:line.writeText}))
         );
+
+    var delBtn = $("<a>", {href:"#", class:"btn btn-danger", text:"Delete"});
+    delBtn.click(function(){
+      row.remove();
+    });
+    row.append(
+      $("<td>").append(delBtn));
     return row;
   }
 
