@@ -18,23 +18,30 @@
     </div>
     <main>
       <div id="controller">
-        <table id="table-canvas-configures" class="table table-striped table-bordered">
-          <tr>
-            <th>width</th>
-            <th>height</th>
-          </tr>
-          <tr>
-            <td><input type="text" id="val-canvas-width" value="400"/></td>
-            <td><input type="text" id="val-canvas-height" value="300"/></td>
-          </tr>
-        </table>
-        <table id="table-line-configures" class="table table-striped table-bordered">
-          <tr>
-            <th>interval</th>
-            <th>lineDash</th>
-            <th>writeText</th>
-          </tr>
-        </table>
+        <div id="line-configures-container">
+          <table id="table-canvas-configures" class="table table-striped table-bordered">
+            <tr>
+              <th>width</th>
+              <th>height</th>
+            </tr>
+            <tr>
+              <td><input type="text" id="val-canvas-width" value="400"/></td>
+              <td><input type="text" id="val-canvas-height" value="300"/></td>
+            </tr>
+          </table>
+        </div>
+        <div id="line-configures-container">
+          <table id="table-line-configures" class="table table-striped table-bordered">
+            <tr>
+              <th>interval</th>
+              <th>lineDash</th>
+              <th>writeText</th>
+            </tr>
+          </table>
+          <div id="addrow-btn-container">
+            <a id="addrow-btn" href="#" class="btn btn-info">Add line</a>
+          </div>
+        </div>
         <div id="generate-btn-container">
           <a id="generate-btn" href="#" class="btn btn-primary btn-large">Generate</a>
         </div>

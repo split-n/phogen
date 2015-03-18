@@ -25,6 +25,15 @@ th,td {
   width:46em;
 }
 
+#line-configures-container {
+  margin-bottom: 1em;
+}
+
+#addrow-btn-container {
+  text-align:right;
+  margin-right:3em;
+}
+
 #generate-btn-container {
   text-align:right;
   margin-right:3em;

@@ -1,7 +1,12 @@
 (function(){
   insertSeedLineConfiguration();
+
   $("#generate-btn").click(function(){
     generate();
+  });
+
+  $("#addrow-btn").click(function(){
+    addNewLineConfRow();
   });
 
   function generate(){
@@ -19,23 +24,32 @@
     var seedLines = [{interval:10, lineDash:2, writeText:false},
                      {interval:100, lineDash:1, writeText:true}];
     var rows = seedLines.map(function(line){
-      var row = $("<tr>", {class:"row-line-configure"});
-      row.append(
-          $("<td>").append($("<input>",
-              {type:"text", class:"val-interval", value:line.interval}))
-          );
-      row.append(
-          $("<td>").append($("<input>",
-              {type:"text", class:"val-lineDash", value:line.lineDash}))
-          );
-      row.append(
-          $("<td>").append($("<input>",
-              {type:"checkbox", class:"val-writeText", checked:line.writeText}))
-          );
-      return row;
+      return generateLineConfRow(line);
     });
 
     $("#table-line-configures").append(rows);
+  }
+
+  function addNewLineConfRow(){
+    var row = generateLineConfRow({interval:100, lineDash:1, writeText:true});
+    $("#table-line-configures").append(row);
+  }
+
+  function generateLineConfRow(line){
+    var row = $("<tr>", {class:"row-line-configure"});
+    row.append(
+        $("<td>").append($("<input>",
+            {type:"text", class:"val-interval", value:line.interval}))
+        );
+    row.append(
+        $("<td>").append($("<input>",
+            {type:"text", class:"val-lineDash", value:line.lineDash}))
+        );
+    row.append(
+        $("<td>").append($("<input>",
+            {type:"checkbox", class:"val-writeText", checked:line.writeText}))
+        );
+    return row;
   }
 
   function parseCanvasConfiguration(){
